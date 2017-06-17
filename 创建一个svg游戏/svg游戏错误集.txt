@@ -1,0 +1,20 @@
+1.URL留空格出错
+2.''字符串里面加了一个空格出错，'click'与'click '不同。
+3.函数之间没加逗号！ update（）与rungame（）
+4.for循环--后面少了个；
+5.函数间少逗号
+5this.build(this.x,  this.y, 'player active');参数y后面少逗号！
+5少s
+6..写成了/
+7<= 写成了=<
+8同5
+9game.ns写成了game.svg
+10imageB.setAttribute('class', 'anim2 ' + this.type(row));第二个参数没加空格 颜色没变。
+11同4
+12>=多了一个空格
+13keycode没有驼峰写法
+14.case 序号复制时没改
+15碰撞函数忘记传参了
+16.激光无效：activeClass = activeY[num].getAttribute('class');多写了个Y
+17.大型ufo没出现：图片名字写错、同2、.xlink少写.x
+18激光卡在半空：parseInt（）多了空格、同2

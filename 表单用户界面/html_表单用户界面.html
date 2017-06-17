@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>Order Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="modernizr,js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+<form name="order" method="post" action="/submit">
+	<h1>Order Form</h1>
+<fieldset>
+	<legend>
+		Contact Details
+	</legend>
+	<ul>
+		<li>
+			<label class="required">
+				<div>Full Name</div>
+				<input name="name" required autofocus></input>
+			</label>
+		</li>
+		<li>
+			<label class="required">
+				<div>Email Address</div>
+				<input type="email" name="email" required></input>
+			</label>
+		</li>
+		<li>
+			<label >
+				<div>Postal Address</div>
+				<input name="address1" placeholder="Address line 1" ></input>
+			</label>
+			<div>&nbsp;</div>
+			<input name="address2" placeholder="Address line 2" ></input>
+			<div>&nbsp;</div>
+			<select name="country">
+				<option value="0">Country</option>
+				<option value="Cn">China</option>
+				<option value="US">United States</option>
+				<option value="CA">Canada</option>
+			</select>
+		</li>
+	</ul>
+
+</fieldset>
+<fieldset>
+	<legend>
+		Login Details
+	</legend>
+       <ul>
+       	<li>
+       		<label class="required">
+       			<div>Password</div>
+       			<input type="password" name="password" required></input>
+       		</label>
+       	</li>
+       	<li>
+       		<label class="required">
+       			<div>Confirm Password</div>
+       			<input type="password" name="confirm_password" required></input>
+       		</label>
+       	</li>
+       </ul>
+</fieldset>
+
+
+
+    <fieldset>
+<legend>Order Details</legend>
+<table>
+	<thead>
+		<tr>
+			<th>Product Code</th>
+			<th>Description</th>
+			<th>Qty</th>
+			<th>Price</th>
+			<th>Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>COMP001
+                <input type="hidden" name="product_code" value="COMP001">
+			</td>
+			<td>The Ultimate Smartphone</td>
+			<td>
+				<input  max="99" min="0" type="number"   data-price='399.99'  name="quantity"  value="0"  maxlength="2"></input>
+
+			</td>
+            <td>$399.99</td>
+            <td>
+            	<output name="item_total" class="item_total">$0.00</output>
+            </td>
+		</tr>
+		 <tr>
+                        <td>
+                            COMP002
+                            <input type="hidden" name="product_code" value="COMP002">
+                        </td>
+                        <td>The Ultimate Tablet</td>
+                        <td>
+                            <input type="number" data-price="499.99" name="quantity" 
+                              value="0" min="0" max="99" maxlength="2">		
+                        </td>
+                        <td>$499.99</td>
+                        <td>
+                            <output name="item_total" class="item_total">$0.00</output>	
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            COMP003
+                            <input type="hidden" name="product_code" value="COMP003">
+                        </td>
+                        <td>The Ultimate Netbook</td>
+                        <td>
+                            <input type="number" data-price="299.99" name="quantity" 
+                              value="0" min="0" max="99" maxlength="2">		
+                        </td>
+                        <td>$299.99</td>
+                        <td>
+                            <output name="item_total" class="item_total">$0.00</output>	
+                        </td>
+                    </tr>
+	</tbody>
+<tfoot>
+	<tr>
+		<td colspan="4">Order Total</td>
+		<td>
+			<output name="order_total" id=order_total>$0.00</output>
+		</td>
+	</tr>
+</tfoot>
+</table>	
+</fieldset>
+<fieldset>
+	<legend>Payment Details</legend>
+	<ul>
+		<li>
+			<label class="required">
+				<div>Name on Card</div>
+				<input name="card_name" required></input>
+			</label>
+		</li>
+		<li>
+			<label class="required">
+				<div>Credit Card No.</div>
+				<input name="card_number" pattern="[0-9]{13,16}" maxlength="16" title="13-16 digits,no spaces" required></input>
+			</label>
+		</li>
+		<li>
+			<label class="required">
+				<div>Expiry Date</div>
+				<input type="month" name="card_expiry" maxlength="7" placeholder="YYYY-MM" required value="2015-06"></input>
+			</label>
+		</li>
+	    <li>
+			<label class="required">
+				<div>CVV2 No.</div>
+				<input name="card_cvv2" class="cvv" maxlength="3" pattern="[0-9]{3}" required title="exactly 3 digits">
+					<span>(Three digit code at back of card)</span>
+				</input>
+			</label>
+		</li>
+	</ul>
+</fieldset>
+	<div class="buttons">
+		<input type="submit" value="Submit Order"></input>
+		<input type="submit" id="saveOrder" value="Save Order" formnovalidate formaction="/save"></input>
+	</div>
+</form>
+
+
+</body>
+</html>

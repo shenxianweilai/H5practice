@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+	<title></title>
+	<style type="text/css">
+	body, div, img, span {
+	margin: 0;
+	padding: 0;
+}
+#content {
+	width: 960px;
+	height: 1000px;
+	background: #ccc;
+	margin: 0 auto;
+}
+#ad {
+	width: 960px;
+	margin: 0 auto;
+	display: none;
+	position: relative;
+	overflow: hidden;
+}
+#close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	background: #CF3;
+	top: 0;
+	right: 0;
+	display: none;
+	cursor: pointer;
+}
+	</style>
+</head>
+<body>
+<div id="ad">
+	<img src="1.png" id="adcon" width="1380" height="385">
+</div>
+<script>
+//全局变量
+var oAd     = document.getElementById('ad');
+var oAdcon  = document.getElementById('adcon');
+
+var h = 0;
+var step = 5;
+var maxH = oAdcon.height;
+function adDown(){
+	oAd.style.height = h +'px';
+    oAd.style.display = 'block';
+	if(h<maxH){
+		h+=step;
+		setTimeout(adDown,1);
+		}else{			
+			setTimeout(adUp,3000);
+			}
+}
+function adUp(){
+	if(h>0){
+		h-=step;
+		oAd.style.height = h +'px';
+		setTimeout(adUp,1);
+		}
+	}
+setTimeout(adDown,3000);
+</script>
+</body>
+</html>

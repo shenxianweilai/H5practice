@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>旋转焦点多图</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+     body,div,h2,ul,li,a{padding:0;margin:0;font-family:sans-serif;}
+     .mainbox{width:1200px;height:450px;overflow:hidden;margin:0 auto;position:relative;}
+    .mainbox ul li{float:left;list-style:none;width:300px;height:400px;overflow:hidden;border:30px solid #fff;margin-left:-60px;}
+    .mainbox h2{position:absolute;bottom:80px;right:50px;background:rgba(255,255,255,0.6);padding:5px;letter-spacing:0.6em}
+    .mainbox .butBox a{position:absolute;opacity:0.6}
+    .mainbox .butBox a:hover{opacity:1}
+    .mainbox .butBox .butLeft{top: 220px;left:50px;color:#FFF;font-size:60px;}
+    .mainbox .butBox .butRight{top:220px;right:50px;color:#FFF;font-size:60px;}
+    .mainbox .butBox .butPlay{top:0px;left:0px;border:1px solid #000;padding:3px;}
+    </style>
+</head>
+<body>
+   <div class="mainbox">
+   	<ul>
+   		<li><img src="1.jpg"></li>
+   		<li><img src="2.jpg"></li>
+   		<li><img src="3.jpg"></li>
+   		<li><img src="4.jpg"></li>		
+   	</ul>
+   	<div class="butBox">
+   		<a class="butLeft">&lt;</a>
+   		<a class="butRight">&gt;</a>
+   		<a class="butPlay">play</a>
+   	</div>
+   	<h2>多图旋转轮播效果</h2>
+   </div>
+   <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script type="text/javascript" src="jquery.transform3d.js"></script>
+   <script type="text/javascript" src="test.js"></script>
+</body>
+</html>

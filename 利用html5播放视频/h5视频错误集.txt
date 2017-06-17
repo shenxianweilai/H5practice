@@ -1,0 +1,13 @@
+1p.currentSrc.length);冒号写到括号里面去了。
+2var context = canvas.getContext('2d'); canvas后面少了[0]
+3i++后面不能有分号？
+4.v.addEventListener('canplaythrough',play_video);后面多了}
+5js最后少}）
+6无法暂停：按钮写成paused()
+7无法加速减速：playbackRate写成playBackRate
+8点下屏幕就暂停了，无法标注视频：context.lineTo(click[i],clickY[i]);少X
+9,标注无法成线：addClick(mouseX,mouseY, true);逗号写成点了 我去！
+10change少了个e
+11.框架的语句位置不对，导致没有框架
+12.灰度由于语句复制的框架，导致灰度按钮控制框架！
+						

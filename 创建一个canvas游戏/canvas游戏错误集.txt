@@ -1,0 +1,9 @@
+1.字母打错。
+2.少写对象如：game.canvas 忘写了game ，cxt.fill 漏写cxt,导致小球和球拍没画出来。
+3this.x(j) this.y(i)写反了,写成this.x(i) this.y(j)
+4最最重要的是 整个js没有用括号包起来 导致整个页面无法显示。
+5.levelLimit: function(){
+			return lv > 5 ? 5 : lv;
+		}
+  函数少传入一个参数（lv）  
+导致无法开始游戏

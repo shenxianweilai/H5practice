@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+</style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+    	var canvas = document.getElementById("canvas"),
+    		ctx = canvas.getContext("2d"),
+    		cw = window.innerWidth,
+    		ch = window.innerHeight;
+    	canvas.width = cw;
+    	canvas.height = ch;
+    	var fontsize = 16;
+    	var columns = Math.ceil(cw/fontsize);
+    	var drops = [];
+    	var texts = "0123456789".split("");
+    	for(var i=0,len=columns;i<len;i++){
+    		drops[i] = 1;
+    	}
+    	function run(){
+    		ctx.fillStyle = "rgba(0,0,0,0.05)";
+    		ctx.fillRect(0,0,cw,ch);
+    		ctx.fillStyle = "#0f0";
+    		ctx.font = fontsize + "px Arial";
+    		for(var i=0,len=drops.length;i<len;i++){
+    			var text = texts[Math.floor(Math.random()*texts.length)];
+    			ctx.fillText(text,i*fontsize,drops[i]*fontsize);
+    			if(drops[i]*fontsize>ch || Math.random()>0.95){
+    				drops[i] = 0;
+    			}
+    			drops[i]++;
+    		}
+    	}
+    	setInterval(run,40);
+    </script>
+</body>
+</html>
